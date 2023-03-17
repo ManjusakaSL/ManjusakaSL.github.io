@@ -22,30 +22,40 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="既不是天才，便做那疯子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="水落的个人博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Architecture LegacyAndroid Camera当前提供了两套API：API1.0和API2.0。API1.0和API2.0的区别是： (1) API1.0相对简单且易于使用，应用可以做的事情不多。(2) API2.0则要复杂得多，但是应用程序可以对底层相机有更多的控制权。比如：efficient zero-copy burst&#x2F;streaming flows and">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android相机架构">
+<meta property="og:url" content="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/index.html">
 <meta property="og:site_name" content="水落的个人博客">
-<meta property="og:description" content="既不是天才，便做那疯子">
+<meta property="og:description" content="Architecture LegacyAndroid Camera当前提供了两套API：API1.0和API2.0。API1.0和API2.0的区别是： (1) API1.0相对简单且易于使用，应用可以做的事情不多。(2) API2.0则要复杂得多，但是应用程序可以对底层相机有更多的控制权。比如：efficient zero-copy burst&#x2F;streaming flows and">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/ape_fwk_camera.png">
+<meta property="og:image" content="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/ape_fwk_camera2.png">
+<meta property="og:image" content="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3UwMTM5NjE3MTg=,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/camera_model.png">
+<meta property="og:image" content="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/camera-hal-overview-16790768588878.png">
+<meta property="article:published_time" content="2023-03-17T16:01:03.000Z">
+<meta property="article:modified_time" content="2023-03-17T18:17:23.150Z">
 <meta property="article:author" content="水落">
+<meta property="article:tag" content="Android">
+<meta property="article:tag" content="Camera">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/ape_fwk_camera.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>水落的个人博客</title>
+  <title>Android相机架构 | 水落的个人博客</title>
   
 
 
@@ -197,71 +207,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/18/helloworld/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="水落">
-      <meta itemprop="description" content="既不是天才，便做那疯子">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="水落的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/18/helloworld/" class="post-title-link" itemprop="url">helloworld</a>
-        </h2>
-
-        <div class="post-meta">
-		
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2023-03-18 02:18:33 / 修改时间：02:18:51" itemprop="dateCreated datePublished" datetime="2023-03-18T02:18:33+08:00">2023-03-18</time>
-            </span>
-
-          
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          
-      
-    </div>
-
-    
-    
-    
-
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -277,10 +226,9 @@
       <meta itemprop="name" content="水落的个人博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/" class="post-title-link" itemprop="url">Android相机架构</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          Android相机架构
+        </h1>
 
         <div class="post-meta">
 		
@@ -305,6 +253,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -315,7 +270,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Architecture-Legacy"><a href="#Architecture-Legacy" class="headerlink" title="Architecture Legacy"></a>Architecture Legacy</h1><p><img src="/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/ape_fwk_camera.png" alt="Android 相机架构"><br>Android Camera当前提供了两套API：API1.0和API2.0。API1.0和API2.0的区别是：</p>
+        <h1 id="Architecture-Legacy"><a href="#Architecture-Legacy" class="headerlink" title="Architecture Legacy"></a>Architecture Legacy</h1><p><img src="/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/ape_fwk_camera.png" alt="Android 相机架构"><br>Android Camera当前提供了两套API：API1.0和API2.0。API1.0和API2.0的区别是：</p>
 <p>(1) API1.0相对简单且易于使用，应用可以做的事情不多。<br>(2) API2.0则要复杂得多，但是应用程序可以对底层相机有更多的控制权。比如：efficient zero-copy burst&#x2F;streaming flows and per-frame controls of exposure, gain, white balance gains, color conversion, denoising, sharpening, and more.<br>由于Android软件每次更新总是会做到向前兼容，所以在现在的版本上API1.0的相机也是可以跑起来的。但是当前API1.0 Google已经不再提供更新，它会逐渐被淘汰掉。<br>有关更多Android各版本的细节参考：<a target="_blank" rel="noopener" href="https://source.android.google.cn/devices/camera/versioning">https://source.android.google.cn/devices/camera/versioning</a></p>
 <h1 id="整体架构概述（Camera2-HAL3）"><a href="#整体架构概述（Camera2-HAL3）" class="headerlink" title="整体架构概述（Camera2 + HAL3）"></a>整体架构概述（Camera2 + HAL3）</h1><p>Android Camera整体框架主要包括三个进程：<strong>app进程、camera server进程、hal进程（provider进程）</strong>。进程之间的通信都是通过binder实现，其中app和camera server通信使用 <a target="_blank" rel="noopener" href="https://developer.android.com/guide/components/aidl">AIDL(Android Interface Definition Language)</a> ，camera server和hal（provider进程）通信使用<a target="_blank" rel="noopener" href="https://source.android.com/devices/architecture/hidl">HIDL(HAL interface definition language)</a> 。<br>Android Camera2整体架构如下图：</p>
 <p><img src="/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/ape_fwk_camera2.png" alt="Android 相机架构"><br>上图Kernel层没有画出来，其它基本可以和Android系统框架对应起来。<br>大致分为这几个部分：</p>
@@ -410,7 +365,6 @@
 </li>
 </ul>
 
-      
     </div>
 
     
@@ -418,15 +372,103 @@
     
 
     
+      <div>
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+      </div>
+    
+        <div class="reward-container">
+  <div>原创技术分享，您的支持将鼓励我继续创作</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="水落 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="水落 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>水落
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://example.com/2023/03/18/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84/" title="Android相机架构">http://example.com/2023/03/18/Android相机架构/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/images/wechat_channel.jpg">
+            <span class="icon">
+              <i class="fab fa-weixin"></i>
+            </span>
+
+            <span class="label">WeChat</span>
+          </a>
+        </div>
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/Android/" rel="tag"># Android</a>
+              <a href="/tags/Camera/" rel="tag"># Camera</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/18/helloworld/" rel="next" title="helloworld">
+      helloworld <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
@@ -479,6 +521,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture-Legacy"><span class="nav-number">1.</span> <span class="nav-text">Architecture Legacy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E6%A6%82%E8%BF%B0%EF%BC%88Camera2-HAL3%EF%BC%89"><span class="nav-number">2.</span> <span class="nav-text">整体架构概述（Camera2 + HAL3）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5%EF%BC%9ARequest"><span class="nav-number">3.</span> <span class="nav-text">核心概念：Request</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#request%E5%9C%A8HAL%E7%9A%84%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">request在HAL的处理方式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
