@@ -9,23 +9,8 @@
     <atom:link href="http://example.com/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>既不是天才，便做那疯子</description>
-    <pubDate>Fri, 17 Mar 2023 18:18:51 GMT</pubDate>
+    <pubDate>Fri, 17 Mar 2023 18:17:23 GMT</pubDate>
     <generator>http://hexo.io/</generator>
-    
-    <item>
-      <title>helloworld</title>
-      <link>http://example.com/2023/03/18/helloworld/</link>
-      <guid>http://example.com/2023/03/18/helloworld/</guid>
-      <pubDate>Fri, 17 Mar 2023 18:18:33 GMT</pubDate>
-      
-      
-      
-      
-      
-      
-      <comments>http://example.com/2023/03/18/helloworld/#disqus_thread</comments>
-      
-    </item>
     
     <item>
       <title>Android相机架构</title>
