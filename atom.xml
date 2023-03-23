@@ -3,11 +3,11 @@
   <title>水落の博客</title>
   
   
-  <link href="https://yagami-sl.cn/atom.xml" rel="self"/>
+  <link href="https://www.yagami-sl.cn/atom.xml" rel="self"/>
   
-  <link href="https://yagami-sl.cn/"/>
+  <link href="https://www.yagami-sl.cn/"/>
   <updated>2023-03-21T13:26:32.269Z</updated>
-  <id>https://yagami-sl.cn/</id>
+  <id>https://www.yagami-sl.cn/</id>
   
   <author>
     <name>水落</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Linux用户空间与内核空间</title>
-    <link href="https://yagami-sl.cn/Linux%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4.html"/>
-    <id>https://yagami-sl.cn/Linux%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4.html</id>
+    <link href="https://www.yagami-sl.cn/Linux%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4.html"/>
+    <id>https://www.yagami-sl.cn/Linux%E7%94%A8%E6%88%B7%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%86%85%E6%A0%B8%E7%A9%BA%E9%97%B4.html</id>
     <published>2023-03-21T13:04:22.000Z</published>
     <updated>2023-03-21T13:26:32.269Z</updated>
     
@@ -33,17 +33,17 @@
     
     
     
-    <category term="Linux嵌入式" scheme="https://yagami-sl.cn/categories/Linux%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    <category term="Linux嵌入式" scheme="https://www.yagami-sl.cn/categories/Linux%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
     
     
-    <category term="Linux" scheme="https://yagami-sl.cn/tags/Linux/"/>
+    <category term="Linux" scheme="https://www.yagami-sl.cn/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Android相机架构</title>
-    <link href="https://yagami-sl.cn/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84.html"/>
-    <id>https://yagami-sl.cn/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84.html</id>
+    <link href="https://www.yagami-sl.cn/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84.html"/>
+    <id>https://www.yagami-sl.cn/Android%E7%9B%B8%E6%9C%BA%E6%9E%B6%E6%9E%84.html</id>
     <published>2023-03-17T16:01:03.000Z</published>
     <updated>2023-03-21T12:31:29.048Z</updated>
     
@@ -57,12 +57,12 @@
     
     
     
-    <category term="Android相机软件" scheme="https://yagami-sl.cn/categories/Android%E7%9B%B8%E6%9C%BA%E8%BD%AF%E4%BB%B6/"/>
+    <category term="Android相机软件" scheme="https://www.yagami-sl.cn/categories/Android%E7%9B%B8%E6%9C%BA%E8%BD%AF%E4%BB%B6/"/>
     
     
-    <category term="Android" scheme="https://yagami-sl.cn/tags/Android/"/>
+    <category term="Android" scheme="https://www.yagami-sl.cn/tags/Android/"/>
     
-    <category term="Camera" scheme="https://yagami-sl.cn/tags/Camera/"/>
+    <category term="Camera" scheme="https://www.yagami-sl.cn/tags/Camera/"/>
     
   </entry>
   
